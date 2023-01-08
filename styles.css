@@ -64,7 +64,7 @@ body {
     background-image: url(images/pipe.png);
     /* min-height: 250px; */
     width: 40px;
-    left: 400px;
+    left: 40px;
     z-index: -100;
 }
 
