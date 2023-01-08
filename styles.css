@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+#container {
+    position: relative;
+    width: 480px;
+    height: 700px;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    z-index: -100;
+}
+
+.background img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.ground {
+    position: absolute;
+    bottom: 0;
+    background-image: url(images/ground.png);
+    background-repeat: repeat-x;
+    width: 1200px;
+    height: 70px;
+    image-rendering: pixelated;
+    z-index: 100;
+}
+
+@keyframes move-ground {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -480px;
+    }
+}
+
+.ground-pipe {
+    position: absolute;
+    bottom: 70px;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    background-image: url(images/pipe.png);
+    /* min-height: 250px; */
+    width: 40px;
+    left: 400px;
+    z-index: -100;
+}
+
+
+@keyframes pipe-ground {
+    0% {
+        right: 100%;
+    }
+
+    50% {
+        right: 50%;
+    }
+    
+    100% {
+        right: 0%;
+    }
+}
+
+
+
+.sky {
+    position: absolute;
+    top: 0;
+    background-image: none;
+    background-repeat: repeat-x;
+    width: 4800px;
+    height: 70px;
+    image-rendering: pixelated;
+    z-index: 100;
+}
+
+@keyframes move-sky {
+    0% {
+        left: 0%;
+    }
+    100% {
+        left: -480px;
+    }
+}
+
+.sky-pipe {
+    position: absolute;
+    top: 0;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    background-image: url(images/pipe.png);
+    /* min-height: 120px; */
+    width: 40px;
+    left: 400px;
+    z-index: -100;
+}
+
+@keyframes pipe-sky {
+    0% {
+        right: 100%;
+    }
+
+    50% {
+        right: 50%;
+    }
+    
+    100% {
+        right: 0%;
+    }
+}
+
+.bird {
+    position: absolute;
+    bottom: 100px;
+    height: 45px;
+    width: 60px;
+    border-radius: 50%;
+    background-image: url(images/flappy.png);
+    image-rendering: pixelated;
+    z-index: 2000;
+}
+
+/* .fly {
+    animation: move-flappy 1s ease-in-out infinite;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+} */
+
+/* More keyframes will make the animation smoother */
+/* @keyframes move-flappy {
+   0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-50px);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  75% {
+    transform: translateY(-150px);
+  }
+  100% {
+    transform: translateY(-150px);
+  }
+} */
+
+
+.popup {
+    width: 320px;
+    padding: 1rem;
+    font-size: 1rem;
+    height: 70px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255,255,255,0.5);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 1rem;
+    z-index: 4000;
+}
+
+.game-over {
+    width: 320px;
+    font-size: 1.2rem;
+    height: 70px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255,255,255,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    z-index: 4000;
+}
+
+.hidden {
+    display: none;
+} 
+
+.score-display {
+    position: absolute;
+    color: ghostwhite;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    right: 15px;
+    top: 5px;
+    font-size: 2rem;
+    z-index: 5000;
+}
+
+
+

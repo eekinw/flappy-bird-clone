@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- game is within a container -->
+
+    <div id="container">
+
+    <div class="score-display"></div>
+
+    <div class="background">
+        <img src="./images/sky.jpg" alt="">
+    </div>
+
+    <div class="score">
+        <span class="current-score"></span>
+    </div>
+
+    <div class="sky">
+        <div class="sky-pipe"></div>
+    </div>
+
+    <div class="ground">
+        <div class="ground-pipe"></div>
+    </div>
+
+    <div class="message">
+        <!-- <p>Press Space Bar to Play!</p>
+        <p>Game over!</p> -->
+    </div>
+
+    <div class="bird"></div>
+   </div>
+    
+    <div class="popup">
+        <p>Press the Space Bar to Start!</p>
+    </div>
+
+
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+<!-- Steps:
+
+    1. Animate flappy jump
+    2. Move the ground repeatedly
+    3. Alternate the pipes (most difficult)
+
+-->
