@@ -68,6 +68,7 @@ function updateFlappyPosition() {
     }
 
     bird.style.bottom = flappyBottom + "px";
+    // console.log(flappyBottom)
 }
 
 
@@ -91,6 +92,7 @@ function alternatePipeLength() {
 function pipeAnimation() {
     pipeId = setInterval(alternatePipeLength, 4000)
 }
+
 
 
 function jump() {
@@ -208,7 +210,6 @@ function endGame() {
     flappyBottom = 100;
     flappyLeft = 10;
     score = 0;
-
 
     // Reset the animations and position of the bird
     ground.style.animation = ""
