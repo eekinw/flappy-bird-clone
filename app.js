@@ -105,14 +105,20 @@ function jump() {
 
 // document.addEventListener("keyup", jump)
 
+let clickToJumpHandler = null;
+
 function clickToJump() {
-    document.addEventListener("click", () => {
+    if(clickToJumpHandler) {
+        document.removeEventListener("click", clickToJumpHandler)
+    }
+    clickToJumpHandler = () => {
     if(!popup.classList.contains("hidden")) {
         return
     } else {
         jump()
     }
-})
+};
+    document.addEventListener("click", clickToJumpHandler)
 }
 
 startGame();
@@ -192,7 +198,7 @@ function updateScoreDisplay() {
 function restartGame() {
     popup.addEventListener("click", () => {
         console.log("popup clicked!")
-        popup.textContent = "Press the Space Bar to Start!"
+        popup.textContent = "Press the Space Bar to Start and Click to Jump!"
         // popup.classList.toggle("hidden")
         startGame();
     })
@@ -204,6 +210,7 @@ function endGame() {
     clearInterval(pipeId);
     clearInterval(scoreId);
     clearInterval(displayId)
+    document.removeEventListener("click", clickToJump)
 
 
     // Reset flappyBottom and flappyLeft
